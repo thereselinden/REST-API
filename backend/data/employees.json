@@ -54,5 +54,12 @@
     "lastName": "Linden",
     "jobTitle": "Chef",
     "email": "therese@hej.com"
+  },
+  {
+    "id": "7007e6b2-6fb0-4363-be89-c98428e6b7e8",
+    "firstName": "Kalle",
+    "lastName": "Kula",
+    "jobTitle": "Manager",
+    "email": "kallekula@hej.se"
   }
 ]
