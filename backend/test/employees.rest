@@ -11,3 +11,18 @@ Content-Type: application/json
    "jobTitle": "Manager",
    "email": "kallekula@hej.se"
  }
+
+###
+
+PUT http://localhost:3000/employees/3
+Content-Type: application/json
+
+{
+  "firstName": "Lovisa",
+  "lastName": "Hamilton",
+  "jobTitle": "Project Manager",
+  "email": "lovisahamilton@hello.se"
+}
+
+###
+DELETE http://localhost:3000/employees/2
