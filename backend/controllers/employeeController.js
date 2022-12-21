@@ -18,6 +18,26 @@ const getEmployees = async (req, res) => {
   }
 };
 
+const getSingleEmployee = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const fileData = await fsPromises.readFile(dataPath, 'utf-8');
+    const employees = JSON.parse(fileData);
+    let employee = employees.find(data => data.id.toString() === id);
+
+    if (!employee) {
+      res.status(400).json({ message: 'Could not find employee' });
+      return;
+    }
+    res.status(200).json(employee);
+  } catch (err) {
+    console.error(
+      `Got an error trying to get one specific element: ${err.message}`
+    );
+    res.status(404).json({ message: err.message });
+  }
+};
+
 const createEmployee = async (req, res) => {
   const data = {
     id: uuidv4(),
@@ -132,6 +152,7 @@ const deleteEmployee = async (req, res) => {
 
 module.exports = {
   getEmployees,
+  getSingleEmployee,
   createEmployee,
   updateEmployee,
   deleteEmployee,
