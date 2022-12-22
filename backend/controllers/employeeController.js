@@ -74,11 +74,12 @@ const createEmployee = async (req, res) => {
 };
 
 const updateEmployee = async (req, res) => {
+  const id = req.params.id;
   try {
     const fileData = await fsPromises.readFile(dataPath, 'utf-8');
     const employees = JSON.parse(fileData);
 
-    let employee = employees.find(data => data.id === req.params.id);
+    let employee = employees.find(data => data.id.toString() === id);
 
     if (!employee) {
       res.status(400).json({ message: 'Could not find employee' });
@@ -86,7 +87,7 @@ const updateEmployee = async (req, res) => {
     }
 
     // remove employee from array where id matches param
-    const index = employees.findIndex(obj => obj.id === req.params.id);
+    const index = employees.findIndex(obj => obj.id === id);
     const updatedEmployeeList = [
       ...employees.slice(0, index), //starts at index 0 and ends at index of the param object.
       ...employees.slice(index + 1), // starts at index of param object +1 and all the rest within the array, no end

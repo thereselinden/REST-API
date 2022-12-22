@@ -1,9 +1,22 @@
 import { fetchAllEmployees } from './modules/allEmployees.mjs';
+import { printSingleEmployee } from './modules/singleEmployee.mjs';
 
 // listener
-// To omit error in console that could not append
-// document.addEventListener('DOMContentLoaded', () => {
-//   if (window.location.pathname === '/frontend/index.html') fetchAllEmployees();
-// });
+document.addEventListener('DOMContentLoaded', () => {
+  console.log(window.location.pathname);
+  if (window.location.pathname === '/frontend/index.html') {
+    console.log('inside if');
+    fetchAllEmployees();
+  } else {
+    console.log('inside else');
+    printSingleEmployee();
+  }
+});
 
-fetchAllEmployees();
+document.querySelector('#homeLink').addEventListener('click', backToStartPage);
+
+function backToStartPage() {
+  if (window.location.pathname === '/frontend/employee.html') {
+    return (window.location = 'index.html');
+  }
+}

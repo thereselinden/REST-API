@@ -26,19 +26,5 @@
     "lastName": "Karlsson",
     "jobTitle": "Backend Developer",
     "email": "karlkarlsson@hello.se"
-  },
-  {
-    "id": 5,
-    "firstName": "Kajsa",
-    "lastName": "Kajsson",
-    "jobTitle": "Frontend Developer",
-    "email": "kajsakajsson@hello.se"
-  },
-  {
-    "id": 6,
-    "firstName": "Zoe",
-    "lastName": "Xi",
-    "jobTitle": "Fullstack Developer",
-    "email": "zoexi@hello.se"
   }
 ]
