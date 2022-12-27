@@ -18,23 +18,37 @@
   <body>
     <header>
       <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand text-center" href="#">
+        <a class="navbar-brand text-center" href="index.html">
           <p id="homeLink" class="font-weight-light">HelloC</p>
-        </a>
-        <a class="navbar-brand" href="addEmployee.html">
-          <h2>&plus;</h2>
         </a>
       </nav>
     </header>
     <main class="container-fluid pb-4 pt-5">
-      <section
-        id="employeesContainer"
-        class="container d-flex flex-wrap"
-      ></section>
-      <section
-        id="singleEmployee"
-        class="d-flex justify-content-center"
-      ></section>
+      <form>
+        <div class="mb-3">
+          <label for="firstName" class="form-label">Firstname</label>
+          <input type="text" class="form-control" id="firstName" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Lastname</label>
+          <input type="text" class="form-control" id="lastName" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="jobTitle" class="form-label">Job title</label>
+          <input type="text" class="form-control" id="jobTitle" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="addEmployeeBtn">
+          Submit
+        </button>
+      </form>
     </main>
 
     <script

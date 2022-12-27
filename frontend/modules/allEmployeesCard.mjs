@@ -1,8 +1,7 @@
-import { updateSingleEmployee } from './updateEmployee.mjs';
-import { deleteSingleEmployee } from './deleteEmployee.mjs';
-import { showModal } from './modal.mjs';
+import { fetchSingleEmployee } from './fetches/getSingleEmployee.mjs';
 
-export const card = (employee, container) => {
+export function card(employee) {
+  const container = document.querySelector('#employeesContainer');
   const cardWrapper = document.createElement('div');
   cardWrapper.classList.add('card-wrapper');
   cardWrapper.classList.add('col-12');
@@ -14,6 +13,9 @@ export const card = (employee, container) => {
   const card = document.createElement('div');
   card.classList.add('card');
   card.setAttribute('id', employee.id);
+
+  // const img = document.createElement('img');
+  // img.classList.add('card-img-top');
 
   const cardBody = document.createElement('div');
   cardBody.classList.add('card-body');
@@ -30,25 +32,14 @@ export const card = (employee, container) => {
   contact.classList.add('card-text');
   contact.textContent = employee.email;
 
-  const editBtn = document.createElement('a');
-  editBtn.classList.add('btn');
-  editBtn.classList.add('btn-primary');
-  editBtn.id = employee.id;
-  editBtn.innerHTML = 'Edit';
-  editBtn.setAttribute('data-bs-toggle', '#myModal');
-  editBtn.setAttribute('data-bs-target', 'ModalLoginForm');
-  // editBtn.addEventListener('click', e => updateSingleEmployee(e));
-  editBtn.addEventListener('click', e => showModal(e));
+  const buttonLink = document.createElement('a');
+  buttonLink.classList.add('btn');
+  buttonLink.classList.add('btn-primary');
+  buttonLink.innerHTML = 'Go to employee';
+  buttonLink.addEventListener('click', e => fetchSingleEmployee(e));
 
-  const deleteBtn = document.createElement('a');
-  deleteBtn.classList.add('btn');
-  deleteBtn.classList.add('btn-danger');
-  deleteBtn.id = employee.id;
-  deleteBtn.innerHTML = 'Delete';
-  deleteBtn.addEventListener('click', e => deleteSingleEmployee(e));
-
-  cardBody.append(name, title, contact, editBtn, deleteBtn);
+  cardBody.append(name, title, contact, buttonLink);
   card.append(cardBody);
   cardWrapper.appendChild(card);
   container.appendChild(cardWrapper);
-};
+}

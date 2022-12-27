@@ -1,10 +1,10 @@
-import { fetchAllEmployees } from './allEmployees.mjs';
-import { updateSingleEmployee } from './updateEmployee.mjs';
-
-let modalWrap = null;
-const employee = JSON.parse(localStorage.getItem('employee')) || null;
+import { fetchAllEmployees } from './fetches/getAllEmployees.mjs';
+import { updateSingleEmployee } from './fetches/updateEmployee.mjs';
 
 export function showModal() {
+  let modalWrap = null;
+  const employee = JSON.parse(localStorage.getItem('employee')) || null;
+
   // omit to create multiply modal boxes
   if (modalWrap) {
     modalWrap.remove();

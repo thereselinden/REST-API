@@ -1,10 +1,10 @@
-import { deleteEmployeeUrl } from '../urls.js';
+//import { deleteEmployeeUrl } from '../../urls.js';
 
 export async function deleteSingleEmployee(e) {
   const id = e.target.id;
 
   try {
-    await fetch(`${deleteEmployeeUrl}/${id}`, {
+    await fetch(`http://localhost:3000/employees/${id}`, {
       method: 'DELETE',
     });
     await location.reload();

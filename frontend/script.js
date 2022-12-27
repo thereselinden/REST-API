@@ -1,4 +1,5 @@
-import { fetchAllEmployees } from './modules/allEmployees.mjs';
+import { fetchAllEmployees } from './modules//fetches/getAllEmployees.mjs';
+import { addEmployee } from './modules/fetches/addEmployee.mjs';
 //import { getSingleEmployeeUrl } from './urls';
 
 // LISTENER
@@ -25,3 +26,6 @@ function backToStartPage() {
   //   return (window.location = 'index.html');
   // }
 }
+
+const addEmployeeBtn = document.querySelector('#addEmployeeBtn');
+addEmployeeBtn.addEventListener('click', e => addEmployee(e));

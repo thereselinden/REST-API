@@ -1,16 +1,58 @@
 [
   {
+    "id": "5",
+    "firstName": "Kajsa",
+    "lastName": "Kajsson",
+    "jobTitle": "Frontend Developer",
+    "email": "kajsakajsson@hello.se"
+  },
+  {
+    "id": "3",
+    "firstName": "Lewis",
+    "lastName": "Hamilton",
+    "jobTitle": "Project",
+    "email": "lewishamilton@hello.se"
+  },
+  {
     "id": "6",
-    "firstName": "Zoe",
+    "firstName": "ZoeMa",
     "lastName": "Xi",
     "jobTitle": "Fullstack Developer",
     "email": "zoexi@hello.se"
   },
   {
-    "id": "5",
-    "firstName": "KajsaHej",
-    "lastName": "Karlsson",
-    "jobTitle": "Frontend",
-    "email": "kajsakajsson@hello.se"
+    "id": "bb010a08-6035-4db4-8a2a-dfb7c2af1973",
+    "firstName": "Therrese",
+    "lastName": "Linden",
+    "jobTitle": "Student",
+    "email": "therese@helloC.se"
+  },
+  {
+    "id": "55821a86-3648-4a9b-8867-9c9e9ee828fa",
+    "firstName": "Sara",
+    "lastName": "Hejsan",
+    "jobTitle": "Art",
+    "email": "sarahejsan@helloc.se"
+  },
+  {
+    "id": "f313b897-04af-4cc6-9989-40e3d500bf47",
+    "firstName": "Ludwig ",
+    "lastName": "Wendt",
+    "jobTitle": "Föräldraledig",
+    "email": "luddeHej@helloc.se"
+  },
+  {
+    "id": "1",
+    "firstName": "John",
+    "lastName": "Doe",
+    "jobTitle": "CTO",
+    "email": "johndoe@hello.se"
+  },
+  {
+    "id": "2",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "jobTitle": "CFO",
+    "email": "janedoe@hello.se"
   }
 ]
