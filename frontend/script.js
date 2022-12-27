@@ -1,22 +1,27 @@
 import { fetchAllEmployees } from './modules/allEmployees.mjs';
-import { printSingleEmployee } from './modules/singleEmployee.mjs';
+//import { getSingleEmployeeUrl } from './urls';
 
-// listener
+// LISTENER
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(window.location.pathname);
   if (window.location.pathname === '/frontend/index.html') {
-    console.log('inside if');
     fetchAllEmployees();
-  } else {
-    console.log('inside else');
-    printSingleEmployee();
   }
+  // else {
+  //   printSingleEmployee();
+  //   //fetchSingleEmployee();
+  // }
 });
 
 document.querySelector('#homeLink').addEventListener('click', backToStartPage);
 
 function backToStartPage() {
-  if (window.location.pathname === '/frontend/employee.html') {
-    return (window.location = 'index.html');
-  }
+  const allEmployeesContainer = document.querySelector('#employeesContainer');
+  allEmployeesContainer.removeAttribute('style');
+
+  const employeeContainer = document.querySelector('#singleEmployee');
+  employeeContainer.setAttribute('style', 'display: none !important');
+  // if (window.location.pathname === '/frontend/employee.html') {
+  //   console.log('back to start');
+  //   return (window.location = 'index.html');
+  // }
 }

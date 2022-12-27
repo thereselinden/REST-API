@@ -13,7 +13,7 @@ const getEmployees = async (req, res) => {
     const employees = JSON.parse(result);
     res.status(200).json(employees);
   } catch (err) {
-    res.status(400);
+    res.status(400).res.send({});
     console.error(err);
   }
 };
@@ -75,6 +75,7 @@ const createEmployee = async (req, res) => {
 
 const updateEmployee = async (req, res) => {
   const id = req.params.id;
+  console.log(req.body);
   try {
     const fileData = await fsPromises.readFile(dataPath, 'utf-8');
     const employees = JSON.parse(fileData);

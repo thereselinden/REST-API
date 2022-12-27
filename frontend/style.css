@@ -5,3 +5,8 @@
 }
 
 /* ALL EMPLOYEES PAGE */
+
+/* SINGLE EMPLOYEE PAGE */
+#singleEmployee {
+  display: none;
+}
