@@ -1,5 +1,6 @@
 import { fetchAllEmployees } from './modules//fetches/getAllEmployees.mjs';
-import { addEmployee } from './modules/fetches/addEmployee.mjs';
+import { addEmployee, validateInput } from './modules/fetches/addEmployee.mjs';
+import { fetchSingleEmployee } from './modules/fetches/getSingleEmployee.mjs';
 //import { getSingleEmployeeUrl } from './urls';
 
 // LISTENER
@@ -7,15 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname === '/frontend/index.html') {
     fetchAllEmployees();
   }
-  // else {
-  //   printSingleEmployee();
-  //   //fetchSingleEmployee();
-  // }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname === '/frontend/employee.html') {
+    console.log('pathName', window.location.pathname);
+    // fetchSingleEmployee();
+  }
 });
 
 document.querySelector('#homeLink').addEventListener('click', backToStartPage);
 
 function backToStartPage() {
+  //TODO: Only needed if I am unable to separate single employee to separate html page
+  console.log('backToStartPage called');
   const allEmployeesContainer = document.querySelector('#employeesContainer');
   allEmployeesContainer.removeAttribute('style');
 
@@ -28,4 +34,4 @@ function backToStartPage() {
 }
 
 const addEmployeeBtn = document.querySelector('#addEmployeeBtn');
-addEmployeeBtn.addEventListener('click', e => addEmployee(e));
+addEmployeeBtn.addEventListener('click', e => validateInput(e));

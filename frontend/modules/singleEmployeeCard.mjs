@@ -1,4 +1,3 @@
-//import { updateSingleEmployee } from './fetches/updateEmployee.mjs';
 import { deleteSingleEmployee } from './fetches/deleteEmployee.mjs';
 import { showModal } from './modal.mjs';
 
@@ -30,6 +29,12 @@ export const card = (employee, container) => {
   contact.classList.add('card-text');
   contact.textContent = employee.email;
 
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('d-flex');
+  buttonContainer.classList.add('justify-content-around');
+  buttonContainer.classList.add('ms-5');
+  buttonContainer.classList.add('me-5');
+
   const editBtn = document.createElement('a');
   editBtn.classList.add('btn');
   editBtn.classList.add('btn-primary');
@@ -47,7 +52,8 @@ export const card = (employee, container) => {
   deleteBtn.innerHTML = 'Delete';
   deleteBtn.addEventListener('click', e => deleteSingleEmployee(e));
 
-  cardBody.append(name, title, contact, editBtn, deleteBtn);
+  buttonContainer.append(editBtn, deleteBtn);
+  cardBody.append(name, title, contact, buttonContainer);
   card.append(cardBody);
   cardWrapper.appendChild(card);
   container.appendChild(cardWrapper);

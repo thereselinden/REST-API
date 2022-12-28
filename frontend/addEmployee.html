@@ -18,8 +18,8 @@
   <body>
     <header>
       <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand text-center" href="index.html">
-          <p id="homeLink" class="font-weight-light">HelloC</p>
+        <a class="navbar-brand text-center ms-3" href="index.html">
+          <p id="homeLink" class="font-weight-light mb-0">HelloC</p>
         </a>
       </nav>
     </header>
@@ -43,6 +43,10 @@
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
           <input type="email" class="form-control" id="email" required />
+        </div>
+
+        <div class="mb-3">
+          <p id="errorMessage"></p>
         </div>
 
         <button type="submit" class="btn btn-primary" id="addEmployeeBtn">

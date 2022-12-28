@@ -18,5 +18,4 @@ export async function printSingleEmployee() {
   }
 
   card(employee, container);
-  //employeeForm();
 }

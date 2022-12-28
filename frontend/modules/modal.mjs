@@ -62,5 +62,6 @@ export function showModal() {
     const updatedData = { firstName, lastName, jobTitle, email };
     updateSingleEmployee(updatedData, employee.id);
     modal.hide();
+    location.href = 'index.html';
   });
 }

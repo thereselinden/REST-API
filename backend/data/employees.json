@@ -1,47 +1,5 @@
 [
   {
-    "id": "5",
-    "firstName": "Kajsa",
-    "lastName": "Kajsson",
-    "jobTitle": "Frontend Developer",
-    "email": "kajsakajsson@hello.se"
-  },
-  {
-    "id": "3",
-    "firstName": "Lewis",
-    "lastName": "Hamilton",
-    "jobTitle": "Project",
-    "email": "lewishamilton@hello.se"
-  },
-  {
-    "id": "6",
-    "firstName": "ZoeMa",
-    "lastName": "Xi",
-    "jobTitle": "Fullstack Developer",
-    "email": "zoexi@hello.se"
-  },
-  {
-    "id": "bb010a08-6035-4db4-8a2a-dfb7c2af1973",
-    "firstName": "Therrese",
-    "lastName": "Linden",
-    "jobTitle": "Student",
-    "email": "therese@helloC.se"
-  },
-  {
-    "id": "55821a86-3648-4a9b-8867-9c9e9ee828fa",
-    "firstName": "Sara",
-    "lastName": "Hejsan",
-    "jobTitle": "Art",
-    "email": "sarahejsan@helloc.se"
-  },
-  {
-    "id": "f313b897-04af-4cc6-9989-40e3d500bf47",
-    "firstName": "Ludwig ",
-    "lastName": "Wendt",
-    "jobTitle": "Föräldraledig",
-    "email": "luddeHej@helloc.se"
-  },
-  {
     "id": "1",
     "firstName": "John",
     "lastName": "Doe",
@@ -49,10 +7,38 @@
     "email": "johndoe@hello.se"
   },
   {
-    "id": "2",
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "jobTitle": "CFO",
-    "email": "janedoe@hello.se"
+    "id": "fb8d057d-83ea-424a-a971-1248a147d4a9",
+    "firstName": "Therese",
+    "lastName": "Lindén",
+    "jobTitle": "Student",
+    "email": "therese@helloc.se"
+  },
+  {
+    "id": "8aa5bc5f-1caa-4ae3-b7c7-54fdcd10a2b0",
+    "firstName": "Ludwig",
+    "lastName": "W",
+    "jobTitle": "Manager",
+    "email": "ludwig@helloc.se"
+  },
+  {
+    "id": "be66a3ee-525b-4188-b39d-b94da6822e4a",
+    "firstName": "Sanna",
+    "lastName": "hej",
+    "jobTitle": "Korv",
+    "email": "hej@helloc.se"
+  },
+  {
+    "id": "a66b4d68-5c56-4a78-980d-6e8ac89ece94",
+    "firstName": "Håkan",
+    "lastName": "Hejsson",
+    "jobTitle": "Support",
+    "email": "hakanhejsson@hello.se"
+  },
+  {
+    "id": "53cf58ff-23bc-4024-8a83-89333fa94c61",
+    "firstName": "Sandra",
+    "lastName": "Sandsson",
+    "jobTitle": "Manager",
+    "email": "sandrasandrsson@helloc.se"
   }
 ]

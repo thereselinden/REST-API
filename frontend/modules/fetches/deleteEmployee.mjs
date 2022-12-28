@@ -1,5 +1,7 @@
 //import { deleteEmployeeUrl } from '../../urls.js';
 
+import { fetchAllEmployees } from './getAllEmployees.mjs';
+
 export async function deleteSingleEmployee(e) {
   const id = e.target.id;
 
@@ -7,8 +9,8 @@ export async function deleteSingleEmployee(e) {
     await fetch(`http://localhost:3000/employees/${id}`, {
       method: 'DELETE',
     });
-    await location.reload();
-    // vad ska jag göra här? VIll helst skicka tillbaka till ('/') för att göra en ny fetch
+    fetchAllEmployees();
+    window.location = 'index.html';
   } catch (err) {
     console.log(err);
   }

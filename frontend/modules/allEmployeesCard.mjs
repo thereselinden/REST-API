@@ -2,6 +2,7 @@ import { fetchSingleEmployee } from './fetches/getSingleEmployee.mjs';
 
 export function card(employee) {
   const container = document.querySelector('#employeesContainer');
+
   const cardWrapper = document.createElement('div');
   cardWrapper.classList.add('card-wrapper');
   cardWrapper.classList.add('col-12');
@@ -9,13 +10,11 @@ export function card(employee) {
   cardWrapper.classList.add('col-md-6');
   cardWrapper.classList.add('col-lg-4');
   cardWrapper.classList.add('text-center');
+  cardWrapper.classList.add('gx-5');
 
   const card = document.createElement('div');
   card.classList.add('card');
   card.setAttribute('id', employee.id);
-
-  // const img = document.createElement('img');
-  // img.classList.add('card-img-top');
 
   const cardBody = document.createElement('div');
   cardBody.classList.add('card-body');
@@ -41,5 +40,6 @@ export function card(employee) {
   cardBody.append(name, title, contact, buttonLink);
   card.append(cardBody);
   cardWrapper.appendChild(card);
+
   container.appendChild(cardWrapper);
 }
