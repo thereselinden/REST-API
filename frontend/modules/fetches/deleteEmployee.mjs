@@ -9,7 +9,6 @@ export async function deleteSingleEmployee(e) {
     await fetch(`http://localhost:3000/employees/${id}`, {
       method: 'DELETE',
     });
-    fetchAllEmployees();
     window.location = 'index.html';
   } catch (err) {
     console.log(err);

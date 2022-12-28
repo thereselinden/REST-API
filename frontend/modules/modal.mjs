@@ -1,6 +1,5 @@
-import { fetchAllEmployees } from './fetches/getAllEmployees.mjs';
 import { updateSingleEmployee } from './fetches/updateEmployee.mjs';
-
+import { fetchSingleEmployee } from './fetches/getSingleEmployee.mjs';
 export function showModal() {
   let modalWrap = null;
   const employee = JSON.parse(localStorage.getItem('employee')) || null;
@@ -56,8 +55,6 @@ export function showModal() {
     const lastName = document.querySelector('#employeeLastName').value;
     const jobTitle = document.querySelector('#employeeJobTitle').value;
     const email = document.querySelector('#employeeEmail').value;
-
-    console.log('hej');
 
     const updatedData = { firstName, lastName, jobTitle, email };
     updateSingleEmployee(updatedData, employee.id);

@@ -1,24 +1,10 @@
 [
   {
-    "id": "1",
-    "firstName": "John",
-    "lastName": "Doe",
-    "jobTitle": "CTO",
-    "email": "johndoe@hello.se"
-  },
-  {
     "id": "fb8d057d-83ea-424a-a971-1248a147d4a9",
     "firstName": "Therese",
     "lastName": "Lindén",
     "jobTitle": "Student",
     "email": "therese@helloc.se"
-  },
-  {
-    "id": "8aa5bc5f-1caa-4ae3-b7c7-54fdcd10a2b0",
-    "firstName": "Ludwig",
-    "lastName": "W",
-    "jobTitle": "Manager",
-    "email": "ludwig@helloc.se"
   },
   {
     "id": "be66a3ee-525b-4188-b39d-b94da6822e4a",
@@ -28,17 +14,17 @@
     "email": "hej@helloc.se"
   },
   {
-    "id": "a66b4d68-5c56-4a78-980d-6e8ac89ece94",
-    "firstName": "Håkan",
-    "lastName": "Hejsson",
-    "jobTitle": "Support",
-    "email": "hakanhejsson@hello.se"
-  },
-  {
     "id": "53cf58ff-23bc-4024-8a83-89333fa94c61",
     "firstName": "Sandra",
-    "lastName": "Sandsson",
+    "lastName": "Sand",
     "jobTitle": "Manager",
     "email": "sandrasandrsson@helloc.se"
+  },
+  {
+    "id": "482ac4c1-1e2d-4f68-bd76-13963e61ee42",
+    "firstName": "Ludde",
+    "lastName": "E",
+    "jobTitle": "Sales manager",
+    "email": "luddee@helloc.se"
   }
 ]
