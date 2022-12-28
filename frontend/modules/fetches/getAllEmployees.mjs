@@ -6,8 +6,11 @@ export async function fetchAllEmployees() {
   try {
     const res = await fetch('http://localhost:3000/employees');
     const data = await res.json();
-    localStorage.setItem('employees', JSON.stringify(data));
-    printAllEmployees(data);
+    const sortedData = data.sort((a, b) =>
+      a.firstName > b.firstName ? 1 : b.firstName > a.firstName ? -1 : 0
+    );
+    localStorage.setItem('employees', JSON.stringify(sortedData));
+    printAllEmployees(sortedData);
   } catch (err) {
     console.error(err.message, err);
   }
