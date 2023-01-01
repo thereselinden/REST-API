@@ -1,6 +1,8 @@
 import { card } from './singleEmployeeCard.mjs';
 
-export async function printSingleEmployee() {
+export function printSingleEmployee() {
+  const employeeLS = JSON.parse(localStorage.getItem('employee')) || null;
+
   const allContainer = document.querySelector('#employeesContainer');
   allContainer.setAttribute('style', 'display: none !important');
 
@@ -9,13 +11,11 @@ export async function printSingleEmployee() {
 
   container.innerHTML = '';
 
-  const employee = JSON.parse(localStorage.getItem('employee')) || null;
-
-  if (!employee) {
+  if (!employeeLS) {
     const text = document.createElement('h2');
     text.innerHTML = 'Something went wrong!';
     container.appendChild(text);
   }
 
-  card(employee, container);
+  card(employeeLS, container);
 }

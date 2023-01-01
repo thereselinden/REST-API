@@ -16,12 +16,11 @@ if (window.location.pathname === '/frontend/addEmployee.html') {
 }
 
 // If I manage to get employee on separate html file
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.location.pathname === '/frontend/employee.html') {
-    console.log('pathName', window.location.pathname);
-    // fetchSingleEmployee();
-  }
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   if (window.location.pathname === '/frontend/employee.html') {
+//     //fetchSingleEmployee();
+//   }
+// });
 
 //TODO: Only needed if I am unable to separate single employee to separate html page
 // Handle and toggle visability of employees and employee container

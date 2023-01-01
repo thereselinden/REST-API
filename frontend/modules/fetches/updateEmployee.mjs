@@ -7,7 +7,7 @@ export async function updateSingleEmployee(updatedData, id) {
     body: JSON.stringify(updatedData),
   });
   const data = await res.json();
+  return data;
   // TODO: Reload first index page '/' to refetch all employees
   // TODO: OR should I just rerun this page and print single employee with new data?
-  console.log('Update fetch data json: ', data);
 }

@@ -13,7 +13,7 @@ export async function addEmployee(employeeData) {
 
     // data.message because data is return as message upon fail (console.log(data.message))
     if (!data.message) {
-      fetchAllEmployees();
+      await fetchAllEmployees();
       location.href = 'index.html';
     }
   } catch (err) {

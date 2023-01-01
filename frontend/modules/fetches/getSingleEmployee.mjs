@@ -7,6 +7,5 @@ export async function fetchSingleEmployee(e) {
   const data = await res.json();
 
   localStorage.setItem('employee', JSON.stringify(data));
-  await printSingleEmployee();
-  //window.location = 'employee.html';
+  printSingleEmployee(e);
 }

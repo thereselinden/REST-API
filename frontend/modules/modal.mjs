@@ -1,5 +1,5 @@
 import { updateSingleEmployee } from './fetches/updateEmployee.mjs';
-import { fetchSingleEmployee } from './fetches/getSingleEmployee.mjs';
+
 export function showModal() {
   let modalWrap = null;
   const employee = JSON.parse(localStorage.getItem('employee')) || null;
@@ -49,6 +49,7 @@ export function showModal() {
   modal.show();
 
   const myForm = document.querySelector('#employeeForm');
+
   myForm.addEventListener('submit', e => {
     e.preventDefault();
     const firstName = document.querySelector('#employeeFirstName').value;
@@ -59,6 +60,6 @@ export function showModal() {
     const updatedData = { firstName, lastName, jobTitle, email };
     updateSingleEmployee(updatedData, employee.id);
     modal.hide();
-    location.href = 'index.html';
+    //location.href = 'index.html';
   });
 }
