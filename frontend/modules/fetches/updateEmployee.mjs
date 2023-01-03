@@ -1,5 +1,7 @@
+import { db_url } from '/frontend/urls.js';
+
 export async function updateSingleEmployee(updatedData, id) {
-  const res = await fetch(`http://localhost:3000/employees/${id}`, {
+  const res = await fetch(`${db_url}/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -8,6 +10,4 @@ export async function updateSingleEmployee(updatedData, id) {
   });
   const data = await res.json();
   return data;
-  // TODO: Reload first index page '/' to refetch all employees
-  // TODO: OR should I just rerun this page and print single employee with new data?
 }

@@ -1,11 +1,16 @@
 import { printSingleEmployee } from '../printSingleEmployee.mjs';
+import { db_url } from '/frontend/urls.js';
 
-export async function fetchSingleEmployee(e) {
-  const employeeId = e.target.parentElement.parentElement.id;
+export async function getSingleEmployee(id) {
+  try {
+    const res = await fetch(`${db_url}/${id}`);
+    const data = await res.json();
 
-  const res = await fetch(`http://localhost:3000/employees/${employeeId}`);
-  const data = await res.json();
+    localStorage.setItem('employee', JSON.stringify(data));
+    window.location = 'employee.html';
 
-  localStorage.setItem('employee', JSON.stringify(data));
-  printSingleEmployee(e);
+    printSingleEmployee();
+  } catch (err) {
+    console.log(err);
+  }
 }

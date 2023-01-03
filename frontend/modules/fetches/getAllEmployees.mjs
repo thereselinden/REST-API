@@ -1,10 +1,10 @@
-//import { getAllEmployeesUrl } from '../../urls.js';
 import { printAllEmployees } from '../printAllEmployees.mjs';
+import { db_url } from '/frontend/urls.js';
 
 // Fetch all employees
-export async function fetchAllEmployees() {
+export async function getAllEmployees() {
   try {
-    const res = await fetch('http://localhost:3000/employees');
+    const res = await fetch(db_url);
     const data = await res.json();
     const sortedData = data.sort((a, b) =>
       a.firstName > b.firstName ? 1 : b.firstName > a.firstName ? -1 : 0

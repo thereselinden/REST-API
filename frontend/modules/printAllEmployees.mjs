@@ -1,4 +1,4 @@
-import { card } from './allEmployeesCard.mjs';
+import { card } from './card.mjs';
 
 export function printAllEmployees(employees) {
   employees.forEach(employee => {

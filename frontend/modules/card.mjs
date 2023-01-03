@@ -1,4 +1,4 @@
-import { fetchSingleEmployee } from './fetches/getSingleEmployee.mjs';
+import { getSingleEmployee } from './fetches/getSingleEmployee.mjs';
 
 export function card(employee) {
   const container = document.querySelector('#employeesContainer');
@@ -35,11 +35,16 @@ export function card(employee) {
   buttonLink.classList.add('btn');
   buttonLink.classList.add('btn-primary');
   buttonLink.innerHTML = 'Go to employee';
-  buttonLink.addEventListener('click', e => fetchSingleEmployee(e));
+  buttonLink.addEventListener('click', e => showEmployee(e));
 
   cardBody.append(name, title, contact, buttonLink);
   card.append(cardBody);
   cardWrapper.appendChild(card);
 
   container.appendChild(cardWrapper);
+}
+
+async function showEmployee(e) {
+  const selected = e.target.parentNode.parentNode.id;
+  await getSingleEmployee(selected);
 }
