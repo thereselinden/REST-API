@@ -1,16 +1,12 @@
-//import { deleteEmployeeUrl } from '../../urls.js';
+import { db_url } from '/frontend/urls.js';
 
-import { fetchAllEmployees } from './getAllEmployees.mjs';
-
-export async function deleteSingleEmployee(e) {
-  const id = e.target.id;
-
+export async function deleteSingleEmployee(id) {
   try {
-    await fetch(`http://localhost:3000/employees/${id}`, {
+    await fetch(`${db_url}/${id}`, {
       method: 'DELETE',
     });
     window.location = 'index.html';
   } catch (err) {
-    console.log(err);
+    console.log(err.message, err);
   }
 }

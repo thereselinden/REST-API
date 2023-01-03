@@ -1,21 +1,18 @@
-import { card } from './singleEmployeeCard.mjs';
+import { showModal } from './modal.mjs';
+import { deleteSingleEmployee } from './fetches/deleteEmployee.mjs';
 
-export function printSingleEmployee() {
-  const employeeLS = JSON.parse(localStorage.getItem('employee')) || null;
+export function printSingleEmployee(employee) {
+  const fullname = document.querySelector('#employeeName');
+  const jobtitle = document.querySelector('#employeeJobTitle');
+  const email = document.querySelector('#employeeEmail');
 
-  const allContainer = document.querySelector('#employeesContainer');
-  allContainer.setAttribute('style', 'display: none !important');
+  const editBtn = document.querySelector('#editBtn');
+  const deleteBtn = document.querySelector('.delete-btn');
 
-  let container = document.querySelector('#singleEmployee');
-  container.style.display = 'flex';
+  fullname.innerHTML = `${employee.firstName} ${employee.lastName}`;
+  jobtitle.innerHTML = employee.jobTitle;
+  email.innerHTML = employee.email;
 
-  container.innerHTML = '';
-
-  if (!employeeLS) {
-    const text = document.createElement('h2');
-    text.innerHTML = 'Something went wrong!';
-    container.appendChild(text);
-  }
-
-  card(employeeLS, container);
+  editBtn.addEventListener('click', e => showModal(e));
+  deleteBtn.addEventListener('click', () => deleteSingleEmployee(employee.id));
 }

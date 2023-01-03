@@ -1,19 +1,5 @@
 [
   {
-    "id": "1",
-    "firstName": "John",
-    "lastName": "Doe",
-    "jobTitle": "CTO",
-    "email": "johndoe@hello.se"
-  },
-  {
-    "id": "3",
-    "firstName": "Lewis",
-    "lastName": "Hamilton",
-    "jobTitle": "Project Manager",
-    "email": "lewishamilton@hello.se"
-  },
-  {
     "id": "4",
     "firstName": "Karl",
     "lastName": "Karlsson",
@@ -23,36 +9,22 @@
   {
     "id": "5",
     "firstName": "Kajsa",
-    "lastName": "Kajsson",
+    "lastName": "Kajsasson",
     "jobTitle": "Frontend Developer",
     "email": "kajsakajsson@hello.se"
   },
   {
-    "id": "6",
-    "firstName": "Zoe",
-    "lastName": "Xi",
-    "jobTitle": "Fullstack Developer",
-    "email": "zoexi@hello.se"
-  },
-  {
-    "id": "2",
-    "firstName": "Jane",
-    "lastName": "Doer",
+    "id": "e6a12703-b1fb-46a9-933b-0b051a2fc58e",
+    "firstName": "Johan",
+    "lastName": "Doe",
     "jobTitle": "CFO",
-    "email": "janedoe@hello.se"
+    "email": "johndoe@helloc.se"
   },
   {
-    "id": "b830e4df-2a4a-49bd-a7c4-126e5ffd00cb",
+    "id": "50e420ca-d2ab-458c-a167-03cf1df2697c",
     "firstName": "Therese",
     "lastName": "Linden",
-    "jobTitle": "student",
-    "email": "therese@helloc.se"
-  },
-  {
-    "id": "f35e7001-7397-4bd0-9a12-f37580d07039",
-    "firstName": "ny",
-    "lastName": "ndfd",
-    "jobTitle": "fddölk",
-    "email": "dfd@fd.se"
+    "jobTitle": "Student",
+    "email": "thereselinden@helloc.se"
   }
 ]
