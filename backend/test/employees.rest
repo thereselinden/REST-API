@@ -30,4 +30,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/employees/eb83837c-4366-4f88-94e9-b5c8823938ab
+DELETE http://localhost:3000/employees/:id

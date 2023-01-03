@@ -14,8 +14,9 @@ export async function postEmployee(employeeData) {
 
     // data.message because data is return as message upon fail (console.log(data.message))
     if (!data.message) {
-      await getAllEmployees();
-      location.href = 'index.html';
+      await getAllEmployees().then(() => {
+        location.href = 'index.html';
+      });
     }
   } catch (err) {
     console.log(err, err.message);

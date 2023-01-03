@@ -13,7 +13,7 @@ const getEmployees = async (req, res) => {
     const employees = JSON.parse(result);
     res.status(200).json(employees);
   } catch (err) {
-    res.status(400).res.send({});
+    res.status(400).res.json({});
     console.error(err);
   }
 };
@@ -39,6 +39,7 @@ const getSingleEmployee = async (req, res) => {
 };
 
 const createEmployee = async (req, res) => {
+  console.log('create BODY: ', req.body);
   const data = {
     id: uuidv4(),
     firstName: req.body.firstName,
@@ -66,7 +67,8 @@ const createEmployee = async (req, res) => {
 
     await fsPromises.writeFile(dataPath, JSON.stringify(employees, null, 2));
 
-    res.status(200).json(employees);
+    //res.status(200).json(employees);
+    res.status(200).json(data);
   } catch (err) {
     console.error(`Got an error trying to write to a file: ${err.message}`);
     res.status(404).json({ message: res.message });
@@ -112,7 +114,8 @@ const updateEmployee = async (req, res) => {
     );
 
     //TODO: Can I sort the result? So updated objects returns to its initial place
-    res.status(200).send(updatedEmployeeList);
+    // res.status(200).send(updatedEmployeeList);
+    res.status(200).json(employee); //only return updated object.
   } catch (err) {
     console.error(`Got an error trying to update file: ${err.message}`);
     res.status(404).json({ message: err.message });
@@ -144,8 +147,8 @@ const deleteEmployee = async (req, res) => {
       JSON.stringify(updatedEmployeeList, null, 2)
     );
 
-    //TODO: Can I sort the result? So updated objects returns to its initial place
-    res.status(200).send(updatedEmployeeList);
+    // res.status(200).send(updatedEmployeeList);
+    res.status(200).json({ status: 'success' });
   } catch (err) {
     console.error(`Got an error trying to delete file: ${err.message}`);
     res.status(404).json({ message: err.message });
