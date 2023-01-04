@@ -1,5 +1,5 @@
 import { postEmployee } from './fetches/postEmployee.mjs';
-import { showErrorMessage } from './showErrorMessage.mjs';
+import { errorMessage } from './errorMessage.mjs';
 
 export function validateInput(e) {
   e.preventDefault();
@@ -14,12 +14,12 @@ export function validateInput(e) {
   // check if email is unique
   employees.find(employee => {
     if (employee.email === email) {
-      showErrorMessage('Email already taken');
+      errorMessage('Email already taken');
     }
   });
 
   if (!firstName || !lastName || !jobTitle || !email) {
-    showErrorMessage('Fill all credentials');
+    errorMessage('Fill all credentials');
   } else {
     const employeeData = { firstName, lastName, jobTitle, email };
     postEmployee(employeeData);

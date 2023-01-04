@@ -7,15 +7,3 @@
 body {
   height: 100vh;
 }
-
-/* ALL EMPLOYEES PAGE */
-
-/* SINGLE EMPLOYEE PAGE */
-#singleEmployee {
-  display: none;
-}
-
-/* ADD EMPLOYEES PAGE */
-#errorMessage {
-  font-weight: bold;
-}
