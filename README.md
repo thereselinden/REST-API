@@ -1,5 +1,27 @@
 # REST-API
 
+## Description 
+
+School project.
+Here I have created a simpler REST API in NodeJS with express with the functionality for CRUD. The API stores fictive employed persons. 
+The API has five endpoints, all listed below.
+Each endpoint should perform what its calling method intends to perform, i.e. POST to add, PUT to update, GET to retrieve, etc. 
+The project does not have a database, instead all data is saved in a JSON file. 
+
+### Requiremens met
+
+- The project contains at least 4 endpoints (GET, POST, PUT & DELETE for a resource)
+- All endpoints must be accessible via a REST Client file (.rest|.http)
+- All data must be saved in a JSON file
+- The data in the JSON file must be updated when something is added, updated or removed
+- The API should respond with 404 if the data is missing.
+- Git & GitHub have been used
+- The project folder contains a README.md file
+- The task was submitted on time!
+- A client interface is built to call all the different endpoints of the API and present the data, editing forms must be filled in with existing information.
+- Another GET endpoint has been added where a specific object can be retrieved
+
+
 ## Start application backend 
 1. Run ```npm install``` to install node_modules and used dependencies
 2. Run ```npm start``` to start server
