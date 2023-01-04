@@ -7,6 +7,7 @@ Here I have created a simpler REST API in NodeJS with express with the functiona
 The API has five endpoints, all listed below.
 Each endpoint should perform what its calling method intends to perform, i.e. POST to add, PUT to update, GET to retrieve, etc. 
 The project does not have a database, instead all data is saved in a JSON file. 
+I have used Bootstrap5 ass CSS framework.
 
 ### Requiremens met
 
