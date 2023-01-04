@@ -3,18 +3,13 @@ const fsPromises = require('fs').promises;
 
 const dataPath = 'backend/data/employees.json';
 
-// need to write data with a string, therefor JSON.stringify
-// To work with the data we need to make it an object, using JSON.parse
-
-// GET all employees
 const getEmployees = async (req, res) => {
   try {
     const result = await fsPromises.readFile(dataPath, 'utf-8');
     const employees = JSON.parse(result);
     res.status(200).json(employees);
   } catch (err) {
-    res.status(400).res.send({});
-    console.error(err);
+    res.status(400).res.json({ message: err.message });
   }
 };
 
@@ -31,9 +26,6 @@ const getSingleEmployee = async (req, res) => {
     }
     res.status(200).json(employee);
   } catch (err) {
-    console.error(
-      `Got an error trying to get one specific element: ${err.message}`
-    );
     res.status(404).json({ message: err.message });
   }
 };
@@ -63,19 +55,15 @@ const createEmployee = async (req, res) => {
     }
 
     employees.push(data);
-
     await fsPromises.writeFile(dataPath, JSON.stringify(employees, null, 2));
-
-    res.status(200).json(employees);
+    res.status(200).json(data);
   } catch (err) {
-    console.error(`Got an error trying to write to a file: ${err.message}`);
     res.status(404).json({ message: res.message });
   }
 };
 
 const updateEmployee = async (req, res) => {
   const id = req.params.id;
-  console.log(req.body);
   try {
     const fileData = await fsPromises.readFile(dataPath, 'utf-8');
     const employees = JSON.parse(fileData);
@@ -87,7 +75,7 @@ const updateEmployee = async (req, res) => {
       return;
     }
 
-    // remove employee from array where id matches param
+    // remove employee from array where id matches params
     const index = employees.findIndex(obj => obj.id === id);
     const updatedEmployeeList = [
       ...employees.slice(0, index), //starts at index 0 and ends at index of the param object.
@@ -110,11 +98,8 @@ const updateEmployee = async (req, res) => {
       dataPath,
       JSON.stringify(updatedEmployeeList, null, 2)
     );
-
-    //TODO: Can I sort the result? So updated objects returns to its initial place
-    res.status(200).send(updatedEmployeeList);
+    res.status(200).json(employee); //only return updated object.
   } catch (err) {
-    console.error(`Got an error trying to update file: ${err.message}`);
     res.status(404).json({ message: err.message });
   }
 };
@@ -143,11 +128,8 @@ const deleteEmployee = async (req, res) => {
       dataPath,
       JSON.stringify(updatedEmployeeList, null, 2)
     );
-
-    //TODO: Can I sort the result? So updated objects returns to its initial place
-    res.status(200).send(updatedEmployeeList);
+    res.status(200).json({ status: 'success' });
   } catch (err) {
-    console.error(`Got an error trying to delete file: ${err.message}`);
     res.status(404).json({ message: err.message });
   }
 };
