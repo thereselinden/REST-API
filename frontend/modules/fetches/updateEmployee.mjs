@@ -9,5 +9,6 @@ export async function updateSingleEmployee(updatedData, id) {
     body: JSON.stringify(updatedData),
   });
   const data = await res.json();
-  return data;
+
+  localStorage.setItem('employee', JSON.stringify(data));
 }

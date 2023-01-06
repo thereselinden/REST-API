@@ -22,16 +22,16 @@ export async function showModal() {
         <div class="modal-body">
           <form id="employeeForm">
             <div class="mb-3">
-              <input type="text" class="form-control" id="employeeFirstName" value=${employee.firstName}>
+              <input type="text" class="form-control" id="eFirstName" value=${employee.firstName}>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" id="employeeLastName" value=${employee.lastName}>
+              <input type="text" class="form-control" id="eLastName" value=${employee.lastName}>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" id="employeeJobTitle" value=${employee.jobTitle}>
+              <input type="text" class="form-control" id="eJobTitle" value=${employee.jobTitle}>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" id="employeeEmail" value=${employee.email}>
+              <input type="email" class="form-control" id="eEmail" value=${employee.email}>
             </div>
     
             <div class="modal-footer">
@@ -53,14 +53,13 @@ export async function showModal() {
 
   myForm.addEventListener('submit', async e => {
     e.preventDefault();
-    const firstName = document.querySelector('#employeeFirstName').value;
-    const lastName = document.querySelector('#employeeLastName').value;
-    const jobTitle = document.querySelector('#employeeJobTitle').value;
-    const email = document.querySelector('#employeeEmail').value;
+    let firstName = document.querySelector('#eFirstName').value;
+    let lastName = document.querySelector('#eLastName').value;
+    let jobTitle = document.querySelector('#eJobTitle').value;
+    let email = document.querySelector('#eEmail').value;
 
     const updatedData = { firstName, lastName, jobTitle, email };
     await updateSingleEmployee(updatedData, employee.id);
-    await getSingleEmployee(employee.id);
     modal.hide();
   });
 }

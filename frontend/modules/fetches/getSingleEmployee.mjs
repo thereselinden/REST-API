@@ -7,7 +7,6 @@ export async function getSingleEmployee(id) {
     const data = await res.json();
 
     localStorage.setItem('employee', JSON.stringify(data));
-    window.location = 'employee.html';
 
     printSingleEmployee();
   } catch (err) {

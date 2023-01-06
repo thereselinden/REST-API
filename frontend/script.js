@@ -10,7 +10,7 @@ window.getAllEmployees = getAllEmployees;
 //   if (window.location.pathname === '/frontend/index.html') {
 //     await getAllEmployees();
 //   }
-// });
+// })
 
 // Execute only if path equals addEmployee
 if (window.location.pathname === '/frontend/addEmployee.html') {
