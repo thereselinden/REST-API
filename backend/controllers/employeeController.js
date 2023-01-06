@@ -11,14 +11,11 @@ const getEmployees = async (req, res, next) => {
       const err = new Error('File does not hold any data');
       err.statusCode = 400;
       throw err;
-      //next(err);
-      //return;
     }
     const employees = JSON.parse(result);
     res.status(200).json(employees);
   } catch (err) {
     next(err);
-    // res.status(400).res.json({ message: err.message });
   }
 };
 
@@ -32,14 +29,11 @@ const getSingleEmployee = async (req, res, next) => {
     if (!employee) {
       const err = new Error('Could not find employee');
       err.statusCode = 400;
-      next(err);
-      return;
-      // res.status(400).json({ message: 'Could not find employee' });
-      // return;
+      throw err;
     }
     res.status(200).json(employee);
   } catch (err) {
-    res.status(404).json({ message: err.message });
+    next(err);
   }
 };
 
@@ -52,13 +46,11 @@ const createEmployee = async (req, res, next) => {
     email: req.body.email,
   };
 
+  // check that all input fields are filled in
   if (!data.firstName || !data.lastName || !data.jobTitle || !data.email) {
     const err = new Error('Please submit all fields!');
     err.statusCode = 400;
-    next(err);
-    return;
-    // res.status(400).json({ message: 'Please submit all fields! ' });
-    // throw new Error('Please submit all fields');
+    throw err;
   }
 
   try {
@@ -69,17 +61,14 @@ const createEmployee = async (req, res, next) => {
     if (employees.find(employee => employee.email === data.email)) {
       const err = new Error('Email already in use');
       err.statusCode = 409;
-      next(err);
-      return;
-      // res.status(409).json({ message: 'Email already used' });
-      // return;
+      throw err;
     }
 
     employees.push(data);
     await fsPromises.writeFile(dataPath, JSON.stringify(employees, null, 2));
     res.status(200).json(data);
   } catch (err) {
-    res.status(404).json({ message: res.message });
+    next(err);
   }
 };
 
@@ -94,10 +83,7 @@ const updateEmployee = async (req, res, next) => {
     if (!employee) {
       const err = new Error('Could not find employee');
       err.statusCode = 400;
-      next(err);
-      return;
-      // res.status(400).json({ message: 'Could not find employee' });
-      // return;
+      throw err;
     }
 
     // remove employee from array where id matches params
@@ -125,11 +111,11 @@ const updateEmployee = async (req, res, next) => {
     );
     res.status(200).json(employee); //only return updated object.
   } catch (err) {
-    res.status(404).json({ message: err.message });
+    next(err);
   }
 };
 
-const deleteEmployee = async (req, res) => {
+const deleteEmployee = async (req, res, next) => {
   try {
     const fileData = await fsPromises.readFile(dataPath, 'utf-8');
     const employees = JSON.parse(fileData);
@@ -137,8 +123,9 @@ const deleteEmployee = async (req, res) => {
     let employee = employees.find(data => data.id === req.params.id);
 
     if (!employee) {
-      res.status(400).json({ message: 'Could not find employee' });
-      return;
+      const err = new Error('Could not find employee');
+      err.statusCode = 400;
+      throw err;
     }
 
     // remove employee from array where id matches param
@@ -155,7 +142,7 @@ const deleteEmployee = async (req, res) => {
     );
     res.status(200).json({ status: 'success' });
   } catch (err) {
-    res.status(404).json({ message: err.message });
+    next(err);
   }
 };
 

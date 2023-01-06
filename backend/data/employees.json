@@ -7,13 +7,6 @@
     "email": "kajsakajsson@hello.se"
   },
   {
-    "id": "6",
-    "firstName": "Zoe",
-    "lastName": "Xi",
-    "jobTitle": "Fullstack Developer",
-    "email": "zoexi@hello.se"
-  },
-  {
     "id": "1",
     "firstName": "John",
     "lastName": "Doe",
@@ -40,5 +33,19 @@
     "lastName": "Doe",
     "jobTitle": "CFO",
     "email": "janedoe@hello.se"
+  },
+  {
+    "id": "6",
+    "firstName": "Zoey",
+    "lastName": "Xi-Ling",
+    "jobTitle": "Fullstack Developer",
+    "email": "zoexiling@hello.se"
+  },
+  {
+    "id": "bb8dfcd6-3d59-439d-8d14-8f839dec2c5a",
+    "firstName": "Anders",
+    "lastName": "Andersson",
+    "jobTitle": "Intern",
+    "email": "andersandersson@hello.se"
   }
 ]

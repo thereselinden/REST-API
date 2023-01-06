@@ -4,6 +4,7 @@ import { errorMessage } from './errorMessage.mjs';
 export function validateInput(e) {
   e.preventDefault();
 
+  // To check that email is not already occupied
   const employees = JSON.parse(localStorage.getItem('employees'));
 
   const firstName = document.querySelector('#firstName').value;

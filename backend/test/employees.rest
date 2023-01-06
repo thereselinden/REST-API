@@ -23,10 +23,10 @@ PUT http://localhost:3000/employees/:id
 Content-Type: application/json
 
 {
-  "firstName": "Kalle",
-  "lastName": "Hej",
-  "jobTitle": "Project Manager",
-  "email": "kallehej@hello.se"
+  "firstName": "Karl",
+  "lastName": "Karlsson",
+  "jobTitle": "Customer Manager",
+  "email": "karlkarlsson@hello.se"
 }
 
 ###
