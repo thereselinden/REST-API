@@ -104,12 +104,11 @@ const updateEmployee = async (req, res, next) => {
 
     updatedEmployeeList.push(employee);
 
-    // write file
     await fsPromises.writeFile(
       dataPath,
       JSON.stringify(updatedEmployeeList, null, 2)
     );
-    res.status(200).json(employee); //only return updated object.
+    res.status(200).json(employee);
   } catch (err) {
     next(err);
   }
@@ -131,11 +130,10 @@ const deleteEmployee = async (req, res, next) => {
     // remove employee from array where id matches param
     const index = employees.findIndex(obj => obj.id === req.params.id);
     const updatedEmployeeList = [
-      ...employees.slice(0, index), //starts at index 0 and ends at index of the param object.
-      ...employees.slice(index + 1), // starts at index of param object +1 and all the rest within the array, no end
+      ...employees.slice(0, index),
+      ...employees.slice(index + 1),
     ];
 
-    // write file
     await fsPromises.writeFile(
       dataPath,
       JSON.stringify(updatedEmployeeList, null, 2)
