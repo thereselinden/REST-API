@@ -8,6 +8,6 @@ export async function deleteSingleEmployee(id) {
       window.location = 'index.html';
     });
   } catch (err) {
-    console.log(err.message, err);
+    console.error(err.message, err);
   }
 }

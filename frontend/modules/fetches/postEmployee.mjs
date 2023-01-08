@@ -19,6 +19,6 @@ export async function postEmployee(employeeData) {
       });
     }
   } catch (err) {
-    console.log(err, err.message);
+    console.error(err, err.message);
   }
 }

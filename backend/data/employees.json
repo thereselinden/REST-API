@@ -28,17 +28,17 @@
     "email": "karolinhamilton@hello.se"
   },
   {
-    "id": "b935a045-9ed8-41a4-a705-19fd7ed96044",
-    "firstName": "Ludwig",
-    "lastName": "Wendt",
-    "jobTitle": "Test person",
-    "email": "ludwig@hello.se"
-  },
-  {
     "id": "2",
-    "firstName": "Jane",
+    "firstName": "Janet",
     "lastName": "Doe",
     "jobTitle": "Manager",
     "email": "janedoe@hello.se"
+  },
+  {
+    "id": "21185374-645c-466f-9647-952ef609f124",
+    "firstName": "Therese",
+    "lastName": "Linden",
+    "jobTitle": "Student",
+    "email": "therese@hello.se"
   }
 ]
