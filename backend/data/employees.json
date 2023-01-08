@@ -14,13 +14,6 @@
     "email": "karldoer@hello.se"
   },
   {
-    "id": "2",
-    "firstName": "Janne",
-    "lastName": "Dogge",
-    "jobTitle": "Manager",
-    "email": "jannedogge@hello.se"
-  },
-  {
     "id": "6",
     "firstName": "Zoe",
     "lastName": "Xi",
@@ -35,17 +28,17 @@
     "email": "karolinhamilton@hello.se"
   },
   {
-    "id": "83075463-519d-48ad-9725-40721ef9d87a",
-    "firstName": "Therese",
-    "lastName": "Linden",
-    "jobTitle": "Student",
-    "email": "therese@hello.se"
-  },
-  {
     "id": "b935a045-9ed8-41a4-a705-19fd7ed96044",
     "firstName": "Ludwig",
     "lastName": "Wendt",
     "jobTitle": "Test person",
     "email": "ludwig@hello.se"
+  },
+  {
+    "id": "2",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "jobTitle": "Manager",
+    "email": "janedoe@hello.se"
   }
 ]
