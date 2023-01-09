@@ -1,12 +1,12 @@
 # REST-API
 
-## Description 
+## Description
 
 School project.
-Here I have created a simpler REST API in NodeJS with express with the functionality for CRUD. The API stores fictive employed persons. 
+Here I have created a simpler REST API in NodeJS with express with the functionality for CRUD. The API stores fictive employed persons.
 The API has five endpoints, all listed below.
-Each endpoint should perform what its calling method intends to perform, i.e. POST to add, PUT to update, GET to retrieve, etc. 
-The project does not have a database, instead all data is saved in a JSON file. 
+Each endpoint should perform what its calling method intends to perform, i.e. POST to add, PUT to update, GET to retrieve, etc.
+The project does not have a database, instead all data is saved in a JSON file.
 I have used Bootstrap5 as CSS framework.
 
 ### Requiremens met
@@ -22,32 +22,35 @@ I have used Bootstrap5 as CSS framework.
 - A client interface is built to call all the different endpoints of the API and present the data, editing forms must be filled in with existing information.
 - Another GET endpoint has been added where a specific object can be retrieved
 
+## Start application backend
 
-## Start application backend 
-1. Run ```npm install``` to install node_modules and used dependencies
-2. Run ```npm start``` to start server
-3. Server is run on ```localhost:3000```
+1. Run `npm install` to install node_modules and used dependencies
+2. Navigate to backend folder `cd backend`
+3. Run `nodemon server.js` to start server
+4. Server is run on `localhost:3000`
 
 ## Available endpoints
 
-* To GET all employees:      GET    ```localhost:3000/employees```
-* To GET single employee:    GET    ```localhost:3000/employees/:id```
-* To POST new employee:      POST   ```localhost:3000/employees```
-* To PUT single employee:    PUT    ```localhost:3000/employees/:id```
-* To DELETE single employee: DELETE ```localhost:3000/employees/:id``` 
+- To GET all employees: GET `localhost:3000/employees`
+- To GET single employee: GET `localhost:3000/employees/:id`
+- To POST new employee: POST `localhost:3000/employees`
+- To PUT single employee: PUT `localhost:3000/employees/:id`
+- To DELETE single employee: DELETE `localhost:3000/employees/:id`
 
+### Test endpoints
 
-### Test endpoints 
 1. Go to backend -> test -> employees.rest
-2. Send request on each separate endpoints test listed 
+2. Send request on each separate endpoints test listed
 
 ## Start application frontend
+
 1. Open with live server
 
 ### Test application features
+
 1. Once live server started you should see stored JSON data
-2. Click on each employee to view that unique employee info 
-3. Click ```edit``` to update employee information
-4. Click ```delete``` to remove/delete employee from database 
-5. Create new employee by pressing the ```+``` sign in header
+2. Click on each employee to view that unique employee info
+3. Click `edit` to update employee information
+4. Click `delete` to remove/delete employee from database
+5. Create new employee by pressing the `+` sign in header
 6. Enter information and click submit
