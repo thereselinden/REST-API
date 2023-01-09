@@ -19,7 +19,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/employees/778dbab1-76ec-4223-8149-0baec5fe8131
+PUT http://localhost:3000/employees/:id
 Content-Type: application/json
 
 {
@@ -30,4 +30,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/employees/778dbab1-76ec-4223-8149-0baec5fe8131
+DELETE http://localhost:3000/employees/:id
