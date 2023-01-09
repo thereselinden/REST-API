@@ -2,7 +2,7 @@ GET http://localhost:3000/employees
 
 ###
 
-GET http://localhost:3000/employees/2
+GET http://localhost:3000/employees/4
 
 ###
 
@@ -19,15 +19,15 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/employees/:id
+PUT http://localhost:3000/employees/778dbab1-76ec-4223-8149-0baec5fe8131
 Content-Type: application/json
 
 {
-  "firstName": "Karl",
-  "lastName": "Karlsson",
+  "firstName": "Kalle",
+  "lastName": "Kanonkula",
   "jobTitle": "Customer Manager",
-  "email": "karlkarlsson@hello.se"
+  "email": "kallekula@hej.se"
 }
 
 ###
-DELETE http://localhost:3000/employees/:id
+DELETE http://localhost:3000/employees/778dbab1-76ec-4223-8149-0baec5fe8131

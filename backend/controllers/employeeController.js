@@ -1,7 +1,7 @@
 const { v4: uuidv4 } = require('uuid');
 const fsPromises = require('fs').promises;
 
-const dataPath = 'backend/data/employees.json';
+const dataPath = 'data/employees.json';
 
 const getEmployees = async (req, res, next) => {
   try {

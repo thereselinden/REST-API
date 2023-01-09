@@ -2,9 +2,9 @@
   "name": "rest-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon backend/server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -12,10 +12,6 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thereselinden/REST-API/issues"
-  },
-  "homepage": "https://github.com/thereselinden/REST-API#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
