@@ -35,17 +35,15 @@ export function card(employee) {
   buttonLink.classList.add('btn');
   buttonLink.classList.add('btn-primary');
   buttonLink.innerHTML = 'Go to employee';
-  buttonLink.addEventListener('click', e => showEmployee(e));
+  buttonLink.addEventListener('click', async e => {
+    const employee = e.target.parentNode.parentNode.id;
+    await getSingleEmployee(employee);
+    location.href = 'employee.html';
+  });
 
   cardBody.append(name, title, contact, buttonLink);
   card.append(cardBody);
   cardWrapper.appendChild(card);
 
   container.appendChild(cardWrapper);
-}
-
-async function showEmployee(e) {
-  const selected = e.target.parentNode.parentNode.id;
-  await getSingleEmployee(selected);
-  window.location = 'employee.html';
 }

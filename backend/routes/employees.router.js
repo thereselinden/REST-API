@@ -8,10 +8,8 @@ const {
   createEmployee,
   updateEmployee,
   deleteEmployee,
-} = require('../controllers/employeeController');
+} = require('../controllers/employees.controller');
 
-// to fix CORS problem installed NPM package and used it on routes,
-//https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
 router.use(cors());
 
 router.get('/', getEmployees);

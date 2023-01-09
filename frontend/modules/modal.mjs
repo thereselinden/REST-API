@@ -1,4 +1,3 @@
-import { getSingleEmployee } from './fetches/getSingleEmployee.mjs';
 import { updateSingleEmployee } from './fetches/updateEmployee.mjs';
 
 export async function showModal() {
