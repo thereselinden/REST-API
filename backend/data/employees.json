@@ -1,5 +1,12 @@
 [
   {
+    "id": "1",
+    "firstName": "John",
+    "lastName": "Doe",
+    "jobTitle": "CTO",
+    "email": "johndoe@hello.se"
+  },
+  {
     "id": "3",
     "firstName": "Lewis",
     "lastName": "Hamilton",
@@ -29,16 +36,9 @@
   },
   {
     "id": "2",
-    "firstName": "Jane",
+    "firstName": "Janet",
     "lastName": "Doe",
     "jobTitle": "CFO",
     "email": "janedoe@hello.se"
-  },
-  {
-    "id": "1",
-    "firstName": "John",
-    "lastName": "Doe",
-    "jobTitle": "CTO",
-    "email": "johndoe@hello.se"
   }
 ]

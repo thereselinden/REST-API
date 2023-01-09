@@ -47,4 +47,5 @@ export function card(employee) {
 async function showEmployee(e) {
   const selected = e.target.parentNode.parentNode.id;
   await getSingleEmployee(selected);
+  window.location = 'employee.html';
 }

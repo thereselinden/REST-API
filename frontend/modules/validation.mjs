@@ -4,6 +4,7 @@ import { errorMessage } from './errorMessage.mjs';
 export function validateInput(e) {
   e.preventDefault();
 
+  // Get stored employees to validate no duplicate emails.
   const employees = JSON.parse(localStorage.getItem('employees'));
 
   const firstName = document.querySelector('#firstName').value;

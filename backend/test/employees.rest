@@ -2,7 +2,7 @@ GET http://localhost:3000/employees
 
 ###
 
-GET http://localhost:3000/employees/2
+GET http://localhost:3000/employees/4
 
 ###
 
@@ -24,9 +24,9 @@ Content-Type: application/json
 
 {
   "firstName": "Kalle",
-  "lastName": "Hej",
-  "jobTitle": "Project Manager",
-  "email": "kallehej@hello.se"
+  "lastName": "Kanonkula",
+  "jobTitle": "Customer Manager",
+  "email": "kallekula@hej.se"
 }
 
 ###

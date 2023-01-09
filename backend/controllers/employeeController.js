@@ -1,19 +1,25 @@
 const { v4: uuidv4 } = require('uuid');
 const fsPromises = require('fs').promises;
 
-const dataPath = 'backend/data/employees.json';
+const dataPath = 'data/employees.json';
 
-const getEmployees = async (req, res) => {
+const getEmployees = async (req, res, next) => {
   try {
     const result = await fsPromises.readFile(dataPath, 'utf-8');
+
+    if (result.length < 1) {
+      const err = new Error('File does not hold any data');
+      err.statusCode = 400;
+      throw err;
+    }
     const employees = JSON.parse(result);
     res.status(200).json(employees);
   } catch (err) {
-    res.status(400).res.json({ message: err.message });
+    next(err);
   }
 };
 
-const getSingleEmployee = async (req, res) => {
+const getSingleEmployee = async (req, res, next) => {
   const id = req.params.id;
   try {
     const fileData = await fsPromises.readFile(dataPath, 'utf-8');
@@ -21,16 +27,17 @@ const getSingleEmployee = async (req, res) => {
     let employee = employees.find(data => data.id.toString() === id);
 
     if (!employee) {
-      res.status(400).json({ message: 'Could not find employee' });
-      return;
+      const err = new Error('Could not find employee');
+      err.statusCode = 400;
+      throw err;
     }
     res.status(200).json(employee);
   } catch (err) {
-    res.status(404).json({ message: err.message });
+    next(err);
   }
 };
 
-const createEmployee = async (req, res) => {
+const createEmployee = async (req, res, next) => {
   const data = {
     id: uuidv4(),
     firstName: req.body.firstName,
@@ -39,9 +46,11 @@ const createEmployee = async (req, res) => {
     email: req.body.email,
   };
 
+  // check that all input fields are filled in
   if (!data.firstName || !data.lastName || !data.jobTitle || !data.email) {
-    res.status(400).json({ message: 'Please submit all fields! ' });
-    throw new Error('Please submit all fields');
+    const err = new Error('Please submit all fields!');
+    err.statusCode = 400;
+    throw err;
   }
 
   try {
@@ -50,19 +59,20 @@ const createEmployee = async (req, res) => {
 
     // Check if email already in use
     if (employees.find(employee => employee.email === data.email)) {
-      res.status(409).json({ message: 'Email already used' });
-      return;
+      const err = new Error('Email already in use');
+      err.statusCode = 409;
+      throw err;
     }
 
     employees.push(data);
     await fsPromises.writeFile(dataPath, JSON.stringify(employees, null, 2));
     res.status(200).json(data);
   } catch (err) {
-    res.status(404).json({ message: res.message });
+    next(err);
   }
 };
 
-const updateEmployee = async (req, res) => {
+const updateEmployee = async (req, res, next) => {
   const id = req.params.id;
   try {
     const fileData = await fsPromises.readFile(dataPath, 'utf-8');
@@ -71,8 +81,9 @@ const updateEmployee = async (req, res) => {
     let employee = employees.find(data => data.id.toString() === id);
 
     if (!employee) {
-      res.status(400).json({ message: 'Could not find employee' });
-      return;
+      const err = new Error('Could not find employee');
+      err.statusCode = 400;
+      throw err;
     }
 
     // remove employee from array where id matches params
@@ -93,18 +104,17 @@ const updateEmployee = async (req, res) => {
 
     updatedEmployeeList.push(employee);
 
-    // write file
     await fsPromises.writeFile(
       dataPath,
       JSON.stringify(updatedEmployeeList, null, 2)
     );
-    res.status(200).json(employee); //only return updated object.
+    res.status(200).json(employee);
   } catch (err) {
-    res.status(404).json({ message: err.message });
+    next(err);
   }
 };
 
-const deleteEmployee = async (req, res) => {
+const deleteEmployee = async (req, res, next) => {
   try {
     const fileData = await fsPromises.readFile(dataPath, 'utf-8');
     const employees = JSON.parse(fileData);
@@ -112,25 +122,25 @@ const deleteEmployee = async (req, res) => {
     let employee = employees.find(data => data.id === req.params.id);
 
     if (!employee) {
-      res.status(400).json({ message: 'Could not find employee' });
-      return;
+      const err = new Error('Could not find employee');
+      err.statusCode = 400;
+      throw err;
     }
 
     // remove employee from array where id matches param
     const index = employees.findIndex(obj => obj.id === req.params.id);
     const updatedEmployeeList = [
-      ...employees.slice(0, index), //starts at index 0 and ends at index of the param object.
-      ...employees.slice(index + 1), // starts at index of param object +1 and all the rest within the array, no end
+      ...employees.slice(0, index),
+      ...employees.slice(index + 1),
     ];
 
-    // write file
     await fsPromises.writeFile(
       dataPath,
       JSON.stringify(updatedEmployeeList, null, 2)
     );
     res.status(200).json({ status: 'success' });
   } catch (err) {
-    res.status(404).json({ message: err.message });
+    next(err);
   }
 };
 
