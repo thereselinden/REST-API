@@ -1,12 +1,5 @@
 [
   {
-    "id": "1",
-    "firstName": "John",
-    "lastName": "Doe",
-    "jobTitle": "CTO",
-    "email": "johndoe@hello.se"
-  },
-  {
     "id": "4",
     "firstName": "Karl",
     "lastName": "Doer",
@@ -28,17 +21,10 @@
     "email": "karolinhamilton@hello.se"
   },
   {
-    "id": "2",
-    "firstName": "Janet",
-    "lastName": "Doe",
-    "jobTitle": "Manager",
-    "email": "janedoe@hello.se"
-  },
-  {
-    "id": "21185374-645c-466f-9647-952ef609f124",
+    "id": "0a74eeaa-06c0-4f27-b23a-071b17588116",
     "firstName": "Therese",
     "lastName": "Linden",
     "jobTitle": "Student",
-    "email": "therese@hello.se"
+    "email": "drdd@hello.se"
   }
 ]
