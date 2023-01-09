@@ -7,17 +7,38 @@
     "email": "johndoe@hello.se"
   },
   {
+    "id": "3",
+    "firstName": "Lewis",
+    "lastName": "Hamilton",
+    "jobTitle": "Project Manager",
+    "email": "lewishamilton@hello.se"
+  },
+  {
+    "id": "4",
+    "firstName": "Karl",
+    "lastName": "Karlsson",
+    "jobTitle": "Backend Developer",
+    "email": "karlkarlsson@hello.se"
+  },
+  {
+    "id": "5",
+    "firstName": "Kajsa",
+    "lastName": "Kajsson",
+    "jobTitle": "Frontend Developer",
+    "email": "kajsakajsson@hello.se"
+  },
+  {
+    "id": "6",
+    "firstName": "Zoe",
+    "lastName": "Xi",
+    "jobTitle": "Fullstack Developer",
+    "email": "zoexi@hello.se"
+  },
+  {
     "id": "2",
     "firstName": "Janet",
     "lastName": "Doe",
     "jobTitle": "CFO",
     "email": "janedoe@hello.se"
-  },
-  {
-    "id": "51e61a8f-bd05-4c58-bc9a-fa116f8da8f8",
-    "firstName": "Therese",
-    "lastName": "Linden",
-    "jobTitle": "Student",
-    "email": "therese@hello.se"
   }
 ]
